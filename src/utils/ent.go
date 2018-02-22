@@ -8,6 +8,7 @@ import (
 	"golang.org/x/net/html"
 )
 
+// Run ...
 func Run(url string) (obj string) {
 	reader, _ := get(url)
 	node, err := html.Parse(reader)
