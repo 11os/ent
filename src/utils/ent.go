@@ -9,7 +9,7 @@ import (
 )
 
 // Run ...
-func Run(url string) (obj string) {
+func Run(url string) (obj []string) {
 	reader, _ := get(url)
 	node, err := html.Parse(reader)
 	doc := goquery.NewDocumentFromNode(node)
@@ -23,7 +23,8 @@ func Run(url string) (obj string) {
 		hrefGbk, _ := decodeToGBK(href)
 		if strings.Contains(hrefGbk, "ftp") {
 			// print(href)
-			obj = obj + hrefGbk
+			obj = append(obj, hrefGbk)
+			// obj = obj.append(hrefGbk)
 		}
 	})
 	return

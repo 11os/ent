@@ -17,7 +17,7 @@ func decodeToGBK(text string) (string, error) {
 	return string(dst[:nDst]), nil
 }
 
-func print(msg string) {
+func Print(msg string) {
 	result, _ := decodeToGBK(msg)
 	fmt.Println(result)
 }
